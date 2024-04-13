@@ -4,6 +4,7 @@ import CarInfo from "./components/carInfo";
 
 export default function Home() {
 
+  //allows data to be global to distribute in car cards
   const [carData, setCars] = useState([]);
   const [makes, setMakes] = useState([]);
 
@@ -12,13 +13,15 @@ export default function Home() {
     getMakes();
   }, []);
 
+  //API call to grab all makes to put them in dropdown list
   const getMakes = () => {
     let carsURL = `https://exam.razoyo.com/api/cars`;
     fetch(carsURL)
       .then((res) => res.json())
       .then((response) => setMakes(response.makes));
   };
-  // Helper function that preforms an API request and sets the `issues` array to a list of issues from GitHub
+
+  //API call to grab all cars by default
   const getAllCars = () => {
     let carsURL = `https://exam.razoyo.com/api/cars`;
     fetch(carsURL)
@@ -26,6 +29,7 @@ export default function Home() {
       .then((response) => setCars(response.cars));
   };
 
+  //API call to filter cars by make depending on user selection
   const filterCars = (make) => {
     let carURL = `https://exam.razoyo.com/api/cars?make=${make}`;
     fetch(carURL)
@@ -33,8 +37,7 @@ export default function Home() {
       .then((response) => setCars(response.cars));
   };
 
-  console.log(carData)
-
+  //handles filter function above when option is selected
   const handleCarFilter = (event) => {
     const { value } = event.target;
     if (value === "") {
@@ -44,22 +47,20 @@ export default function Home() {
     }
   }
 
-
-
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center vh-100 container-fluid">
-        <div className="row">
+      <div className="m-auto w-50" id="carList">
+        <div className="row mt-5" id="carContainer">
 
           <h4 className="text-end text-white mt-5">
             <span className="bg-dark p-2 me-2 rounded-3">Filter by make:</span>
-            <select className="rounded-3 p-2 text-center" onChange={handleCarFilter}>
+            <select className="rounded-3 mt-5 p-2 text-center" onChange={handleCarFilter}>
               <option className="text-center" value="">All</option>
               {makes.map((make, index) => <option className="text-center" key={index}>{make}</option>)}
             </select>
           </h4>
 
-          <div id="accordion mt-5 vw-100">
+          <div id="accordion mt-5">
             {carData.map((car) => (
               <CarInfo
                 id={car.id}
@@ -72,12 +73,6 @@ export default function Home() {
                 year={car.year} />
             ))}
           </div>
-
-
-
-
-
-
         </div>
       </div>
     </>
