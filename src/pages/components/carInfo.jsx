@@ -36,6 +36,7 @@ const CarInfo = ({ id, image, make, model, mpg, price, seats, year }) => {
 
 export default CarInfo;
 
+//This is where I attempted to do a second API call to fulfill the requirements and provide the data for each card individually. I ran into the following CORS error that I could not overcome, despite lengthy time dedicated to doing so.
 
 // localhost/:1 Access to fetch at 'https://exam.razoyo.com/api/cars/wj6qg7zpt09udm1m' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 
