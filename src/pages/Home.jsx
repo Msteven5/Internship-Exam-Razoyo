@@ -52,8 +52,8 @@ export default function Home() {
       <div className="m-auto w-50" id="carList">
         <div className="row mt-5" id="carContainer">
 
-          <h4 className="text-end text-white mt-5">
-            <span className="bg-dark p-2 me-2 rounded-3">Filter by make:</span>
+          <h4 className="text-end text-dark mt-5">
+            <span className="bg-white p-2 me-2 border border-dark fw-normal rounded-3">Filter by make:</span>
             <select className="rounded-3 mt-5 p-2 text-center" onChange={handleCarFilter}>
               <option className="text-center" value="">All</option>
               {makes.map((make, index) => <option className="text-center" key={index}>{make}</option>)}

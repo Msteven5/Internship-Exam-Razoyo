@@ -11,7 +11,7 @@ const CarInfo = ({ id, image, make, model, mpg, price, seats, year }) => {
     return (
         <div className="card mt-2">
             <div className="p-2 px-4 d-flex align-items-center row">
-                <h5 className="mb-0 col-10">
+                <h5 className="mb-0 col-10 fw-semibold">
                         {year} {make} {model}
                 </h5>
                     <button className="col btn btn-link text-end" data-target={`#${id}`} onClick={toggleCollapse} aria-expanded="true" aria-controls={id} > {isCollapsed ? <i class="fa-solid fa-circle-plus"></i> : <i class="fa-solid fa-circle-minus"></i>}
