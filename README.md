@@ -21,3 +21,5 @@ Here's a screenshot of the application once all packages are installed and it is
 Michaeldavidsondev@gmail.com feel free to send an email over to ask any questions or voice any concerns that may arise during the use of this application.
 
 https://github.com/Msteven5
+
+Checkout My Other Projects Here: https://Michaeldavidson.dev
